@@ -23,9 +23,11 @@ export class UserController {
     })
   }))
   create(@UploadedFile() file:Express.Multer.File, @Body() createUserDto: CreateUserDto) {
-    // console.log(file);
+    console.log(file);
     return this.userService.create(createUserDto);
   }
+
+  
 
   @Get()
   findAll() {

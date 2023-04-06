@@ -13,7 +13,7 @@ export class UserService {
   create(createUserDto: CreateUserDto) {
     let user : User = new User();
     user.name = createUserDto.name;
-    user.image = createUserDto.image;
+    user.imagePath = createUserDto.imagePath;
     return this.userRepository.save(user);
   }
 

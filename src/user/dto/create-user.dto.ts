@@ -5,5 +5,5 @@ export class CreateUserDto {
     name:string
 
     @IsString()
-    image:string
+    imagePath:string
 }

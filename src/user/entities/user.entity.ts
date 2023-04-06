@@ -5,9 +5,9 @@ export class User {
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:true})
     name:string
 
-    @Column()
-    image:string
+    @Column({nullable:true})
+    imagePath:string
 }

@@ -4,9 +4,16 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { User } from './user/entities/user.entity';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
-  imports: [   ConfigModule.forRoot({
+  imports: [  
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'files'), // Replace with the path to your static files directory
+    }),
+
+    ConfigModule.forRoot({
     isGlobal: true,
     envFilePath: '.local.env',
   }),
